@@ -19,7 +19,7 @@
     <br>
     <div id="pi" class="alert alert-primary"></div>
     <py-script>
-      
+
 import datetime as dt
 # interact with system
 import os
@@ -53,7 +53,7 @@ for i, y in enumerate(Y):
       string_to_write = 'At month {0}, we have acquired {1} paid subscribers'.format(i,y)
       print(string_to_write)
 
-pyscript.write('end of simulation')
+pyscript.write('pi', f'end of simulation')
 
     </py-script>
   </body>
