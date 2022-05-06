@@ -1,0 +1,32 @@
+description: future parameters setup
+
+ftp:
+    new_value: 0.8
+    started_at: 10
+retention: 
+    new_value: [0.7, 0.62, 0.3] #[1st-month, 6th-month, 12th-month]
+    started_at: 999
+    
+search_paywall:
+    traffic:
+        new_value: 20000
+        started_at: 999
+    cvr: 
+        new_value: 0.03
+        started_at: 999
+
+app_onboarding_paywall:
+    traffic:
+        new_value: 4500
+        started_at: 3
+    cvr: 
+        new_value: 0.0035
+        started_at: 3
+
+other_paywalls:
+    traffic:
+        new_value: 20000
+        started_at: 999
+    cvr: 
+        new_value: 0.07
+        started_at: 999
