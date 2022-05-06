@@ -13,38 +13,40 @@
     <br>
     <div id="pi" class="alert alert-primary"></div>
     <py-script>
-import datetime as dt
-# interact with system
-import os
-import yaml
-from yaml.loader import SafeLoader
-import time
+      import datetime as dt
+      # interact with system
+      import os
+      import yaml
+      from yaml.loader import SafeLoader
+      import time
 
-# data processing
-import numpy as np
-import pandas as pd
-from scipy.optimize import curve_fit
+      # data processing
+      import numpy as np
+      import pandas as pd
+      from scipy.optimize import curve_fit
 
-# forecast model
-from model import PaidPremiumSubscribersForecast
+      # forecast model
+      from model import PaidPremiumSubscribersForecast
 
-# visualization
-from matplotlib import pyplot as plt
-import seaborn as sns
-sns.set_theme()
-import datetime
+      # visualization
+      from matplotlib import pyplot as plt
+      import seaborn as sns
+      sns.set_theme()
+      import datetime
 
-country='Taiwan'
-n_months = 13
-initial_parameters_file = ('{country}_params_init.yml'.format(country=country)).lower()
-new_parameters_file = 'country_params_change.yml'
+      country='Taiwan'
+      n_months = 13
+      initial_parameters_file = ('{country}_params_init.yml'.format(country=country)).lower()
+      new_parameters_file = 'country_params_change.yml'
 
-model = PaidPremiumSubscribersForecast(initial_parameters_file, new_parameters_file)
-model.run(n_months)
-Y = model.total_acquisition
-for i, y in enumerate(Y):
-      string_to_write = 'At month {0}, we have acquired {1} paid subscribers'.format(i,y)
-      pyscript.write(string_to_write)
+      model = PaidPremiumSubscribersForecast(initial_parameters_file, new_parameters_file)
+      model.run(n_months)
+      Y = model.total_acquisition
+      for i, y in enumerate(Y):
+            string_to_write = 'At month {0}, we have acquired {1} paid subscribers'.format(i,y)
+            print(string_to_write)
+      
+      pyscript.write('end of simulation')
 
     </py-script>
   </body>
